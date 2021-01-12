@@ -1,0 +1,105 @@
+Opengl Outline: 
+
+* Introduction
+* Platform Layer Setup (GLFW): Win/Mac/Linux
+* Simple project setup
+* Hello, Opengl: 
+    * Legacy OpenGL (verify GLFW working)
+* Modern Opengl Introduction (GPU Pipelines)
+* Shaders: 
+    * GLSL
+    * Vertex Attributes
+    * Shader Creation and Simple Error Logging
+    * Graphics Shader Pipeline:
+        * Vertex Shader
+        * Fragment Shader
+* Writing a simple pass-through shader 
+* Vertex Buffers / Index Buffers / Vertex Arrays
+    * Create / Update / Bind / Destroy
+* Hello, Triangle
+* Uniforms
+* Blend Equations
+* Texture Samplers:
+    * Sampler Attributes
+    * Loading Texture Data (stb)
+    * Creating GPU Texture Samplers
+* Texture Mapping (UVs)
+* Hello, Quad
+* Basic Linear: 
+    * Mat4
+    * Vector
+* Using glm?
+* Common Spaces: 
+    * Object
+    * World / Model
+    * View
+    * Projection / Clip
+    * NDC
+    * Screen
+* Update Shader / Hello, Cube
+* Uniform Buffer Objects
+* Face Culling
+* Depth Buffer
+* Stencil Buffer
+* Multiple Cubes
+* Basic Lighting:
+    * Normals
+    * Texture Matrices (Tangent/Bitangent)
+    * Basic Lighting Equations
+    * Blinn/Phong Shading
+        - Diffuse/Specular
+        - "Bump" Maps
+* GLTF Loading
+* Cubemaps
+* Framebuffers / Render Targets
+* Instancing
+* MSAA and other AntiAliasing
+* Basic Shadow Mapping
+* Post Processing: 
+    * FXAA
+    * Multiple Gaussian Bloom
+    * SSAO
+    * HDR
+    * Gamma Correction
+* PBR:
+    * BRDFs
+    * Sampling Techniques and Math Overview
+    * Material Properties
+    * Equations
+    * Diffuse Lighting
+    * Diffuse Irradiance
+    * IBL
+* Geometry Shaders
+* Opengl 4.3+:
+    * Tesselation Shaders
+    * Compute Pipelines
+    * Bindless
+
+Script: 
+
+/*===========================================
+Platform Layer / Project Setup (GLFW): Win/Mac/Linux:
+===========================================*/
+
+GLFW overview
+    * What is a platform layer
+    * What does GLFW do for us
+    * Why are we using it (and not writing our own platform layer)
+Win: 
+    * GLFW download/install source
+    * Project setup:
+        * MSVC
+        * MinGW
+Mac: 
+    * GLFW download/install source
+    * Project setup:
+        * GCC
+Linux: 
+    * GLFW download/install source
+    * Project setup:
+        * GCC
+
+Open window - make sure it's running.
+
+
+
