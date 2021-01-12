@@ -13,12 +13,10 @@ const char* vert_src = "\n"
 const char* frag_src = "\n"
     "#version 410 core\n"
     "uniform vec3 u_color;\n"
-    "uniform float u_time;\n"
     "out vec4 frag_color;\n"
     "void main()\n"
     "{\n"
-    "   float st = sin(u_time) * 0.5f + 0.5f;\n"
-    "   frag_color = vec4(st * u_color, 1.0);\n"
+    "   frag_color = vec4(u_color, 1.0);\n"
     "}\n\0";
 
 int32_t compile_shader_stage(const char* src, int32_t stage_type)
@@ -67,6 +65,7 @@ int32_t main (int32_t argc, char** argv)
     #ifdef __APPLE__
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     #endif
+    glfwSwapInterval(1);
     
     GLFWwindow* win = glfwCreateWindow(800, 600, "Opengl Tutorial", NULL, NULL);
     assert(win);
@@ -83,9 +82,8 @@ int32_t main (int32_t argc, char** argv)
     int32_t fs = compile_shader_stage(frag_src, GL_FRAGMENT_SHADER);
     // Construct Shader Program and Link
     int32_t program = create_and_link_shader(vs, fs);
-    // Construct uniforms
+    // Construct uniform
     int32_t u_color = glGetUniformLocation(program, "u_color");
-    int32_t u_time = glGetUniformLocation(program, "u_time");
 
     // Vertex data
     float v_data[] = {
@@ -112,9 +110,6 @@ int32_t main (int32_t argc, char** argv)
     // Program loop
     while (!glfwWindowShouldClose(win))
     {
-        static float t = 0.f;
-        t += 0.0001f;
-
         // Check for input
         if (glfwGetKey(win, GLFW_KEY_ESCAPE) == GLFW_PRESS) glfwSetWindowShouldClose(win, 1);
 
@@ -125,7 +120,6 @@ int32_t main (int32_t argc, char** argv)
         // Draw triangle
         glUseProgram(program);
         glUniform3f(u_color, 1.0f, 0.1f, 0.3f);
-        glUniform1f(u_time, t);
         glBindVertexArray(vao);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 

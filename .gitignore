@@ -1,0 +1,17 @@
+
+*.exe
+0_proj_setup/bin/App
+0_proj_setup/bin/App.exe
+0_proj_setup/bin/glad_impl.obj
+0_proj_setup/bin/glfw_impl.obj
+0_proj_setup/bin/main.obj
+1_hello_triangle/bin/App
+1_hello_triangle/bin/main.obj
+1_hello_triangle/bin/glfw_impl.obj
+1_hello_triangle/bin/glad_impl.obj
+1_hello_triangle/bin/App.exe
+2_uniforms/bin/App
+2_uniforms/bin/App.exe
+2_uniforms/bin/glad_impl.obj
+2_uniforms/bin/glfw_impl.obj
+2_uniforms/bin/main.obj
